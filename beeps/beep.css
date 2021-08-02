@@ -1,0 +1,60 @@
+* {
+    box-sizing: inherit;
+    transition-property: all;
+    transition-duration: .6s;
+    transition-timing-function: ease;
+}
+
+html, body{
+    font-size: 10px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.beep {
+    color: black;
+    cursor: grab;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 45px;
+    margin: 0 0 2em;
+    font-family: monospace;
+    text-decoration: transparent;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    padding: 20px 26px;
+    background: white;
+    letter-spacing: 1px;
+}
+
+.active, .beep:hover {
+    background-color: black;
+    color: white;
+    color-interpolation-filters: revert;
+    border: gray;
+    box-shadow: black;
+    text-decoration: gray;
+    text-shadow: -1px -1px 0;
+}
+
+h1 {
+    font-size: 50px;
+    color: black;
+    font-family: monospace;
+    text-transform: uppercase;
+    text-shadow: 3px 0 dimgray;
+
+}
+
+h2 {
+    font-size: 25px;
+    color: black;
+    font-family: monospace;
+    text-transform: uppercase;
+    text-shadow: 3px 0 dimgray;
+}
+
+.container {
+    margin: 10% auto;
+}
