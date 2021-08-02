@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mountains</title>
+</head>
+<body>
+<h1>Mountains</h1>
+
+<div id="mountains"></div>
+
+<script>
+    const MOUNTAINS = [
+        {name: "Kilimanjaro", height: 5895, place: "Tanzania"},
+        {name: "Everest", height: 8848, place: "Nepal"},
+        {name: "Mount Fuji", height: 3776, place: "Japan"},
+        {name: "Vaalserberg", height: 323, place: "Netherlands"},
+        {name: "Denali", height: 6168, place: "United States"},
+        {name: "Popocatepetl", height: 5465, place: "Mexico"},
+        {name: "Mont Blanc", height: 4808, place: "Italy/France"}
+    ];
+
+    const buildTable = module9 => {
+        let table = document.createElement("table");
+        let tr = document.createElement("tr");
+        let fields = Object.keys(module9[0]);
+
+        fields.forEach(function(fields) {
+            let th = document.createElement("th");
+            th.appendChild(document.createTextNode(fields));
+            tr.appendChild(th);
+        });
+        table.appendChild(tr);
+        module9.forEach(thing => {
+            let tr = document.createElement("tr");
+            fields.forEach(function(field) {
+                let td = document.createElement("td");
+                td.appendChild(document.createTextNode(thing[field]));
+                if (typeof thing[field] === "number") {
+                    td.style.textAlign = "center";
+                }tr.appendChild(td);
+            });
+            table.appendChild(tr);
+        });
+        table.setAttribute("border",".5");
+
+        return table;
+    };
+
+    document.querySelector("#mountains").appendChild(buildTable(MOUNTAINS));
+</script>
+</body>
+</html>
